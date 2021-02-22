@@ -1,0 +1,70 @@
+// {
+//   "extends": "./config/tsconfig.json",
+//   "compileOnSave": true,
+//   "compilerOptions": {
+//     "target": "es2017",
+//     "module": "commonjs",
+//     "jsx": "react",
+//     /* Experimental Options */
+//     "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
+//     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
+//     "strictNullChecks": false,
+//     "lib": ["es5", "es6", "es7", "es2017", "dom"],
+//     "outDir": "dist",
+//     "sourceMap": true
+//   },
+//   "include": [
+//     // "index.tsx",
+//     // "app/**/*.tsx",
+//     // "components/**/*.ts",
+//     // "components/**/*.tsx",
+//     // "src/**/*.tsx",
+//     // "src/**/*.js"
+//     "src/app/index.tsx",
+//     "**/*.ts",
+//     "**/*.tsx",
+//     "**/*.js"
+//   ],
+//   "exclude": ["public", "dist", "node_modules"]
+// }
+// working config start
+{
+  "extends": "./config/tsconfig.json",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "typeRoots": ["../node_modules/@types", "../@types"],
+    "lib": [
+      "ES2015",
+      "ES2016",
+      "ES2017",
+      "ES2018",
+      "ES2019",
+      "ES2020",
+      "esnext",
+      "dom",
+      "DOM.Iterable"
+    ],
+    "plugins": [
+      { "name": "typescript-tslint-plugin" },
+      { "name": "babel-preset-es2015" }
+    ],
+    "jsx": "react",
+    "skipLibCheck": true,
+    // "noEmit": true,
+    "sourceMap": true,
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    /* Module Resolution Options */
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true
+  },
+  // "include": ["**/*.ts", "**/*.tsx", "**/*.js", "src/components/Header.jsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
+  "exclude": ["dist", "node_modules"]
+}

@@ -44,6 +44,7 @@ cd dist && http-server
 - [Babel](https://babeljs.io/)
 - [Sass](https://sass-lang.com/)
 - [PostCSS](https://postcss.org/)
+- [Typescript]
 
 ## Dependencies
 
@@ -54,6 +55,7 @@ cd dist && http-server
 - [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) - Development server for webpack
 - [`webpack-merge`](https://github.com/survivejs/webpack-merge) - Simplify development/production configuration
 - [`cross-env`](https://github.com/kentcdodds/cross-env) - Cross platform configuration
+- [`@babel/plugin-transform-react-jsx`] Add supoort JSX and js file import in typescript file .
 
 ### Babel
 
@@ -70,6 +72,7 @@ cd dist && http-server
   - [`postcss-preset-env`](https://www.npmjs.com/package/postcss-preset-env) - Sensible defaults for PostCSS
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolve CSS imports
 - [`style-loader`](https://webpack.js.org/loaders/style-loader/) - Inject CSS into the DOM
+- [`ts-loader`](https://webpack.js.org/guides/typescript/) - ts-loader works very well in combination with babel and babel-loader. There is an example of this in the official TypeScript Samples. Alternatively take a look at our own example.
 
 ### Plugins
 

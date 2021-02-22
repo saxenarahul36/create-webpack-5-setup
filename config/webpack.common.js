@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   // Where webpack looks to start building the bundle
-  entry: [paths.src + "/app/index.js"],
+  entry: [paths.src + "/app/index.tsx"],
 
   // Where webpack outputs the assets and bundles
   output: {
@@ -52,11 +52,19 @@ module.exports = {
       {
         test: /\.js$|jsx/, // please dont use like this -> test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
-        // resolve: {
-        //   extensions: [".js", ".jsx"],
-        // },
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        ],
+        resolve: {
+          extensions: [".js", ".jsx"],
+        },
       },
+      { test: /\.tsx?$/, exclude: /node_modules/, loader: "ts-loader" },
 
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: "asset/resource" },
@@ -66,12 +74,14 @@ module.exports = {
     ],
   },
   resolve: {
-    alias: {
-      Utils: path.resolve(__dirname, paths.src + "/utils/"),
-      Images: path.resolve(__dirname, paths.src + "/images/"),
-      Styles: path.resolve(__dirname, paths.src + "/styles/"),
-      Components: path.resolve(__dirname, paths.src + "/components/"),
-    },
+    //
+    // alias: {
+    //   Utils: path.resolve(__dirname, paths.src + "/utils/"),
+    //   Images: path.resolve(__dirname, paths.src + "/images/"),
+    //   Styles: path.resolve(__dirname, paths.src + "/styles/"),
+    //   Components: path.resolve(__dirname, paths.src + "/components/"),
+    // },
     // extensions: ["*", ".js", ".jsx"],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
 };
